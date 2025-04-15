@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CursoSeeder extends Seeder
 {
@@ -28,5 +29,7 @@ class CursoSeeder extends Seeder
                 "eixo_id" => 1,
             ],
         ];
+
+        DB::table('cursos')->insert($data);
     }
 }
