@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Teste');
+    //return view('welcome');
 });
 
 //Route::get('/eixo', function () {
