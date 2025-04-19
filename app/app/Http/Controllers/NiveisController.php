@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Eixo;
-use App\Repositories\EixoRepository;
+use App\Models\Niveis;
+use App\Repositories\NiveisRepository;
 use Illuminate\Http\Request;
 
-class EixoController extends Controller
+class NiveisController extends Controller
 {
-    protected EixoRepository $repository;
+    protected NiveisRepository $repository;
 
     public function __construct(){
-        $this->repository = new EixoRepository();
+        $this->repository = new NiveisRepository();
     }
 
     /**
@@ -35,7 +35,7 @@ class EixoController extends Controller
      */
     public function store(Request $request): string
     {
-        $obj = new Eixo();
+        $obj = new Niveis();
         $obj->nome = mb_strtoupper($request->nome, 'UTF-8');
         $this->repository->save($obj);
         return "<h1>Store - OK!</h1>";
@@ -44,7 +44,8 @@ class EixoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id): object {
+    public function show(string $id)
+    {
         return $this->repository->findById($id);
     }
 
@@ -59,14 +60,15 @@ class EixoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id): string {
+    public function update(Request $request, string $id): string
+    {
         $obj = $this->repository->findById($id);
         if(isset($obj)) {
             $obj->nome = mb_strtoupper($request->nome, 'UTF-8');
             $this->repository->save($obj);
             return "<h1>Update - OK!</h1>";
         }
-        return "<h1>Update - Not found Eixo!</h1>";
+        return "<h1>Update - Not found Nivel!</h1>";
     }
 
     /**
@@ -76,6 +78,6 @@ class EixoController extends Controller
     {
         if($this->repository->delete($id))
             return "<h1>Delete - OK!</h1>";
-        return "<h1>Delete - Not found Eixo!</h1>";
+        return "<h1>Delete - Not found Nivel!</h1>";
     }
 }
