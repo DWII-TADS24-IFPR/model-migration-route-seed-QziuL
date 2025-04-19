@@ -6,9 +6,6 @@ use App\Models\Eixo;
 
 class EixoRepository extends Repository
 {
-    /**
-     * Create a new class instance.
-     */
     public function __construct() {
         parent::__construct(new Eixo());
     }

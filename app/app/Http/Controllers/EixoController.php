@@ -64,9 +64,9 @@ class EixoController extends Controller
         if(isset($obj)) {
             $obj->nome = mb_strtoupper($request->nome, 'UTF-8');
             $this->repository->save($obj);
-            return "<h1>Upate - OK!</h1>";
+            return "<h1>Update - OK!</h1>";
         }
-        return "<h1>Upate - Not found Eixo!</h1>";
+        return "<h1>Update - Not found Eixo!</h1>";
     }
 
     /**
