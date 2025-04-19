@@ -1,26 +1,31 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('Teste');
-    //return view('welcome');
 });
 
-//Route::get('/eixo', function () {
-//    return "<h1>Rota Simples</h1>";
-//});
-//
-//Route::get('/parametro/{a}', function ($a) {
-//    return "<h1>Parâmetro recebido: $a</h1>";
-//});
-//
-//Route::get('/parametros/{a}/{b}/{c}', function ($a, $b, $c) {
-//    return "<h1>Parâmetros recebidos: $a / $b / $c</h1>";
-//});
-//
-//Route::get('/opcionais/{a}/{b}/{c?}', function ($a, $b, $c=0) {
-//    return "<h1>Parâmetros recebidos: $a / $b / $c</h1>";
-//});
-//
-//Route::resource('/eixo', 'App\Http\Controllers\EixoController');
+// Rotas para Niveis
+Route::prefix('/niveis')->group(function () {
+    Route::get('/', function () {
+        //
+    });
+
+    Route::post('/', function (Request $request) {
+        //
+    });
+
+    Route::get('/{id}', function ($id) {
+        //
+    });
+
+    Route::put('/{id}', function (Request $request, $id) {
+        //
+    });
+
+    Route::delete('/{id}', function ($id) {
+        //
+    });
+});
